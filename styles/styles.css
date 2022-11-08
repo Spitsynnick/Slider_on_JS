@@ -1,0 +1,202 @@
+/* Common styles */
+.body {
+    margin: 0;
+    font-family: 'Nunito Sans', 'Arial', sans-serif;    
+}
+
+.body * {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.heading_h2 {
+    font-family: 'Yeseva One','Times New Roman', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 37px;
+    text-transform: uppercase;
+}
+
+.textcontent {
+    font-style: normal;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+
+/* Section Completed projects */
+.projects {
+    height: 100vh;
+    background-color: #131313;       
+}
+
+.projects_container {
+    padding-top: 88px;
+    padding-left: 134px;
+}
+
+.projects_outer_div {
+    display: flex;   
+}
+
+.projects_left {
+    display: flex;
+    flex-direction: column;
+    margin-right: 56px;
+}
+
+.projects_heading { 
+    display: flex;   
+    letter-spacing: -0.1em;   
+    color: #E3B873;
+    margin: 63px 0 2px 0;
+}
+
+.projects_line {
+    display: block;
+    padding: 36px 0 0 6px;    
+}
+
+.projects_paragraph {    
+    font-size: 14px;
+    line-height: 27px;    
+    margin: 0 0 48px 0;
+}
+
+.projects_repair {
+    display: grid;
+    grid-template-columns: repeat(2, 190px);
+    row-gap: 34px;    
+}
+
+.projects_block {
+    margin: 0;
+    height: 73px;
+}
+
+.projects_block_heading{
+    font-family: 'Yeseva One','Times New Roman', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    text-transform: uppercase;
+    color: #E3B873;
+    margin: 0 0 9px 0;
+}
+
+.projects_block_span {    
+    font-size: 13px;
+    line-height: 21px;   
+    display: block;
+    margin: 0;
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    margin-top: 65px;
+}
+
+.slider_button {
+    background-color: transparent;
+    border: none;
+    padding: 0;    
+}
+
+.slider_button:hover {
+    cursor: pointer;    
+}
+
+.arrow {
+    width: 41px;
+    height: 13px;
+}
+
+.arrow_left {
+    background-image: url("../images/arrow_left.svg");
+    background-size: cover;
+    margin-right: 29px;   
+}
+
+.slider_dots {
+    display: flex;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-image: url("../images/dot.svg");
+    background-size: cover;
+    transition: background-image .4s ease;   
+}
+
+.dot:nth-child(-n + 2) {
+    margin-right: 18px;
+}
+
+.dot:hover, .activeDot {
+    background-image: url("../images/dot_active.svg");
+    background-size: cover;
+}
+
+.arrow_right {
+    background-image: url("../images/arrow_right.svg");
+    background-size: cover; 
+    margin-left: 29px;    
+}
+
+.projects_navigation {
+    list-style: none;
+    display: flex;
+    padding: 0;    
+    margin-bottom: 50px;
+}
+
+.projects_navigation_item {
+    margin-right: 60px;
+}
+
+.projects_navigation_link {
+    font-family: 'Yeseva One','Times New Roman', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: uppercase;    
+    color: rgba(255, 255, 255, 0.3);
+    text-decoration: none;                    
+}
+
+.projects_navigation_link:hover, .activeLink {    
+    color: #E3B873;      
+    text-decoration-line: underline;
+    transition: .8s ease;               
+}
+
+.projects_navigation_link:hover {
+    cursor: pointer;    
+}
+
+.projectsImage {
+    position: relative;
+}
+
+.sliderImage {    
+    position: absolute;    
+    width: 679px; 
+    height: 482px;   
+    background-size: cover;
+    background-position: center center;    
+    opacity: 0;
+    transition: opacity .8s ease;   
+}
+
+.activeImage {    
+    opacity: 1;
+}
