@@ -1,4 +1,3 @@
-// массив данных: 3 объекта с фото и текстом, которые меняются при переключении слайдера
 let sliderItems = [ 
     { url: "images/rostov_on_don_admiral.jpg",
       city: "Rostov-on-Don<br>LCD admiral",
@@ -20,11 +19,11 @@ let sliderItems = [
     }    
 ];
 
-let projectsImage = document.querySelector(".projectsImage"); // div с фотографиями
-let slider = document.querySelector(".slider"); // div с кнопками слайдера
-let sliderDots = document.querySelector(".slider_dots"); // div с точками
-let sliderText = document.querySelector(".projects_repair"); // div с текстом слайдера
-let sliderLinks = document.querySelector(".projects_navigation"); // ul с ссылками
+let projectsImage = document.querySelector(".projectsImage"); 
+let slider = document.querySelector(".slider"); 
+let sliderDots = document.querySelector(".slider_dots"); 
+let sliderText = document.querySelector(".projects_repair"); 
+let sliderLinks = document.querySelector(".projects_navigation"); 
 
 // функция, отвечающая за представление слайдера
 function initSlider() { 
@@ -50,12 +49,12 @@ function initImages() {
 function initArrows() { 
     slider.querySelectorAll(".arrow").forEach(arrow => {
         arrow.addEventListener("click", () => {
-            let activeNumber = +projectsImage.querySelector(".activeImage").dataset.index; // получить номер текущего слайда
-            let nextNumber; // номер следующего слайда
+            let activeNumber = +projectsImage.querySelector(".activeImage").dataset.index; 
+            let nextNumber; 
 
-            if (arrow.classList.contains("arrow_left")) { // для левой стрелки: если текущий слайд - первый, - следующий будет последним в массиве, иначе - предыдущим в массиве
+            if (arrow.classList.contains("arrow_left")) { 
                 nextNumber = activeNumber === 0 ? sliderItems.length - 1 : activeNumber - 1; 
-            } else { // для правой стрелки: если текущий слайд - последний, - следующий будет первым в массиве, иначе - следующим в массиве
+            } else { 
                 nextNumber = activeNumber === sliderItems.length - 1 ? 0 : activeNumber + 1;
             };
 
@@ -101,18 +100,18 @@ function initLinks() {
 
 // функция отвечает за переключение слайда, отображение активной точки, актывной ссылки, а также текста из массива, соответствующего слайду       
 function moveSlider(number) { 
-        projectsImage.querySelector(".activeImage").classList.remove("activeImage"); // убрать класс activeImage у предыдущего слайда и назначить текущему
+        projectsImage.querySelector(".activeImage").classList.remove("activeImage"); 
         projectsImage.querySelector(".n" + number).classList.add("activeImage");  
 
-        sliderDots.querySelector(".activeDot").classList.remove("activeDot"); // убрать класс activeDot у предыдущей точки и назначить следующей
+        sliderDots.querySelector(".activeDot").classList.remove("activeDot"); 
         sliderDots.querySelector(".dot" + number).classList.add("activeDot");
 
-        sliderText.querySelector(".cityText").innerHTML = sliderItems[number].city; // изменить текст во всех соответствующих блоках при переключении слайда
+        sliderText.querySelector(".cityText").innerHTML = sliderItems[number].city; 
         sliderText.querySelector(".areaText").innerHTML = sliderItems[number].apartmentArea;
         sliderText.querySelector(".timeText").innerHTML = sliderItems[number].repairTime
         sliderText.querySelector(".costText").innerHTML = sliderItems[number].repairCost;  
 
-        sliderLinks.querySelector(".activeLink").classList.remove("activeLink"); // убрать класс activeLink у предыдущей ссылки и назначить следующей
+        sliderLinks.querySelector(".activeLink").classList.remove("activeLink"); 
         sliderLinks.querySelectorAll(".projects_navigation_link")[number].classList.add("activeLink");
 };
 
